@@ -10,7 +10,7 @@ async function start() {
     restRoutes(fastify);
     graphqlRoutes(fastify);
 
-    const PORT = process.env.PORT ? Number(process.env.PORT) : 3000;
+    const PORT = process.env.PORT ? Number(process.env.PORT) : 8080;
     fastify.listen({ port: PORT, host: '0.0.0.0' }, (err, address) => {
         if (err) {
             fastify.log.error(err);
