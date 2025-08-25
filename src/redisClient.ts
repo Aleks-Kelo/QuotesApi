@@ -4,7 +4,7 @@ import { createClient } from 'redis';
 const redisClient = createClient({
     password: process.env.REDIS_PASSWORD,
     socket: {
-        port: process.env.REDIS_PORT ? Number(process.env.REDIS_PORT) : 6739,
+        port: process.env.REDIS_PORT ? parseInt(process.env.REDIS_PORT) : 6739,
         host: process.env.REDIS_URL,
         tls: true,
     },
