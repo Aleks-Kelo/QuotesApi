@@ -18,25 +18,28 @@ node-ts-service
 ## Setup Instructions
 
 1. **Clone the repository:**
-   ```
-   git clone <repository-url>
-   cd node-ts-service
-   ```
+
+    ```
+    git clone <repository-url>
+    cd node-ts-service
+    ```
 
 2. **Install dependencies:**
-   ```
-   npm install
-   ```
+
+    ```
+    npm install
+    ```
 
 3. **Build the project:**
-   ```
-   npm run build
-   ```
+
+    ```
+    npm run build
+    ```
 
 4. **Run the service:**
-   ```
-   npm start
-   ```
+    ```
+    npm start
+    ```
 
 ## Usage
 
@@ -44,7 +47,7 @@ After starting the service, you can access it at `http://localhost:3000` (or the
 
 ## Contributing
 
-Contributions are welcome! Please open an issue or submit a pull request for any improvements or features you'd like to add.
+Contributions are welcome! Please open an issue or submit a pull request for any improvements or features you'd like to add
 
 ## License
 
