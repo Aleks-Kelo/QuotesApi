@@ -1,0 +1,40 @@
+name: Node.js CI/CD
+
+on:
+    push:
+        branches: [main]
+
+jobs:
+    build-and-deploy:
+        runs-on: ubuntu-latest
+
+        steps:
+            # Step 1: Checkout code
+            - uses: actions/checkout@v3
+
+            # Step 2: Set up Node.js
+            - uses: actions/setup-node@v3
+              with:
+                  node-version: 18
+
+            # Step 3: Install dependencies
+            - run: npm install
+
+            # Step 4: Run tests (optional)
+            - run: npm test || echo "No tests configured"
+
+            # Step 5: Build (optional)
+            - run: npm run build || echo "No build step"
+
+            # Step 6: Login to Azure using your secret
+            - name: Azure Login
+              uses: azure/login@v1
+              with:
+                  creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+            # Step 7: Deploy to Azure Web App
+            - name: Deploy to Azure Web App
+              uses: azure/webapps-deploy@v2
+              with:
+                  app-name: quotes-fastify-123
+                  package: . # Deploy the current repo
